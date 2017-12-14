@@ -1,3 +1,6 @@
+import random
+from die import die
+from scorecard import scorecard #?
 player=[]
 dice=[]
 names=[]
@@ -9,3 +12,6 @@ while not numPlayers.isNumeric:
 for x in range(int(numPlayers)):
     player.append(scorecard())
     name.append(input('What\'s your name? '))
+for x in range(13):
+    for turn in range(len(player)):
+        
