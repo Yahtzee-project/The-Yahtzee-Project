@@ -40,66 +40,79 @@ for x in range(13):
             print(alpha[inUse]+': Take \'Aces\' for '+str(player[turn].aces)+' points')
             player[turn].aces=0
             inPlace.append(1)
+            inUse+=1
         if player[turn].twos==0:
             player[turn].twos()
             print(alpha[inUse]+': Take \'Twos\' for '+str(player[turn].twos)+' points')
             player[turn].twos=0
             inPlace.append(2)
+            inUse+=1
         if player[turn].threes==0:
             player[turn].threes()
             print(alpha[inUse]+': Take \'Threes\' for '+str(player[turn].three)+' points')
             player[turn].threes=0
             inPlace.append(3)
+            inUse+=1
         if player[turn].fours==0:
             player[turn].fours()
             print(alpha[inUse]+': Take \'Fours\' for '+str(player[turn].fours)+' points')
             player[turn].fours=0
             inPlace.append(4)
+            inUse+=1
         if player[turn].fives==0:
             player[turn].fives()
             print(alpha[inUse]+': Take \'Fives\' for '+str(player[turn].fives)+' points')
             player[turn].fives=0
             inPlace.append(5)
+            inUse+=1
         if player[turn].sixes==0:
             player[turn].sixes()
             print(alpha[inUse]+': Take \'Sixes\' for '+str(player[turn].sixes)+' points')
             player[turn].sixes=0
             inPlace.append(6)
+            inUse+=1
         if player[turn].fullhouse==0:
             player[turn].fullhouse()
             print(alpha[inUse]+': Take \'Full House\' for '+str(player[turn].fullhouse)+' points')
             player[turn].fullhouse=0
             inPlace.append(7)
+            inUse+=1
         if player[turn].smallstraight==0:
             player[turn].smallstraight()
             print(alpha[inUse]+': Take \'Small Straight\' for '+str(player[turn].smallstraight)+' points')
             player[turn].smallstraight=0
             inPlace.append(8)
+            inUse+=1
         if player[turn].largestraight==0:
             player[turn].largestraight()
             print(alpha[inUse]+': Take \'Large Straight\' for '+str(player[turn].largestraight)+' points')
             player[turn].largestraight=0
             inPlace.append(9)
+            inUse+=1
         if player[turn].threeofakind==0:
             player[turn].threeofakind()
             print(alpha[inUse]+': Take \'Three of a kind\' for '+str(player[turn].threeofakind)+' points')
             player[turn].threeofakind=0
             inPlace.append(10)
+            inUse+=1
         if player[turn].fourofakind==0:
             player[turn].fourofakind()
             print(alpha[inUse]+': Take \'Four of a kind\' for '+str(player[turn].fourofakind)+' points')
             player[turn].fourofakind=0
             inPlace.append(11)
+            inUse+=1
         if player[turn].yahtzee==0:
             player[turn].yahtzee()
             print(alpha[inUse]+': Take \'Yahtzee\' for '+str(player[turn].yahtzee)+' points')
             player[turn].yahtzee=0
             inPlace.append(12)
+            inUse+=1
         if player[turn].chance==0:
             player[turn].chance()
             print(alpha[inUse]+': Take \'Chance\' for '+str(player[turn].chance)+' points')
             player[turn].chance=0
             inPlace.append(13)
+            inUse+=1
         pick=input()
         while len(pick)!=1 or not pick.isAlpha():
             print('You must pick exacly one option')
@@ -131,3 +144,9 @@ for x in range(13):
         if inPlace[alpha.find(pick.upper())]==13:
             player[turn].chance()
         print(names[turn]+'\'s total score is now: '+str(player[turn].aces+player[turn].twos+player[turn].threes+player[turn].fours+player[turn].fives+player[turn].sixes+player[turn].fullhouse+player[turn].smallstraight+player[turn].largestraight+player[turn].threeofakind+player[turn].fourofakind+player[turn].yahtzee+player[turn].chance))
+max=0
+for turn in range(len(player)):
+    if player[turn].aces+player[turn].twos+player[turn].threes+player[turn].fours+player[turn].fives+player[turn].sixes+player[turn].fullhouse+player[turn].smallstraight+player[turn].largestraight+player[turn].threeofakind+player[turn].fourofakind+player[turn].yahtzee+player[turn].chance>max:
+        max=player[turn].aces+player[turn].twos+player[turn].threes+player[turn].fours+player[turn].fives+player[turn].sixes+player[turn].fullhouse+player[turn].smallstraight+player[turn].largestraight+player[turn].threeofakind+player[turn].fourofakind+player[turn].yahtzee+player[turn].chance
+        topPlayer=turn
+print('Congratulations '+names[topPlayer]+'! You won with a score of '+str(max)+'!')
