@@ -1,6 +1,6 @@
 import random
 from die import die
-from scorecard import scorecard #?
+from Yahtzee import scorecard #?
 
 player=[]
 dice=[]
@@ -35,43 +35,43 @@ for x in range(13):
         print('Which of the following would you like to use?')
         inUse=0
         inPlace=[]
-        if player[turn].aces==0:
+        if player[turn].aces==-1:
             player[turn].aces()
             print(alpha[inUse]+': Take \'Aces\' for '+str(player[turn].aces)+' points')
-            player[turn].aces=0
+            player[turn].aces=-1
             inPlace.append(1)
             inUse+=1
-        if player[turn].twos==0:
+        if player[turn].twos==-1:
             player[turn].twos()
             print(alpha[inUse]+': Take \'Twos\' for '+str(player[turn].twos)+' points')
-            player[turn].twos=0
+            player[turn].twos=-1
             inPlace.append(2)
             inUse+=1
-        if player[turn].threes==0:
+        if player[turn].threes==-1:
             player[turn].threes()
             print(alpha[inUse]+': Take \'Threes\' for '+str(player[turn].three)+' points')
-            player[turn].threes=0
+            player[turn].threes=-1
             inPlace.append(3)
             inUse+=1
-        if player[turn].fours==0:
+        if player[turn].fours==-1:
             player[turn].fours()
             print(alpha[inUse]+': Take \'Fours\' for '+str(player[turn].fours)+' points')
-            player[turn].fours=0
+            player[turn].fours=-1
             inPlace.append(4)
             inUse+=1
-        if player[turn].fives==0:
+        if player[turn].fives==-1:
             player[turn].fives()
             print(alpha[inUse]+': Take \'Fives\' for '+str(player[turn].fives)+' points')
             player[turn].fives=0
             inPlace.append(5)
             inUse+=1
-        if player[turn].sixes==0:
+        if player[turn].sixes==-1:
             player[turn].sixes()
             print(alpha[inUse]+': Take \'Sixes\' for '+str(player[turn].sixes)+' points')
-            player[turn].sixes=0
+            player[turn].sixes=-1
             inPlace.append(6)
             inUse+=1
-        if player[turn].fullhouse==0:
+        if player[turn].fullhouse==-1:
             player[turn].fullhouse()
             print(alpha[inUse]+': Take \'Full House\' for '+str(player[turn].fullhouse)+' points')
             player[turn].fullhouse=0
