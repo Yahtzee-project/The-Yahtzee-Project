@@ -136,7 +136,8 @@ class scoreboard:
 
 	def YAHTZEE(): #check
 		points = 0
-		points = points + 50
+		if dice[0] = dice[1] = dice[2] = dice[3] = dice[4] = dice[5]:
+			points = points + 50
 
 		self.YAHTZEE = points
 
