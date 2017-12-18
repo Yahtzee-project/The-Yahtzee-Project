@@ -1,6 +1,6 @@
 import random
 from die import die
-from YAHTZEE import scoreboard #?
+from Yahtzee import scoreboard #?
 
 player=[]
 dice=[]
