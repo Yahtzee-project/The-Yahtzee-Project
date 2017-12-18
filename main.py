@@ -1,6 +1,6 @@
 import random
 from die import die
-from Yahtzee import scorecard #?
+from Yahtzee import scoreboard #?
 
 player=[]
 dice=[]
@@ -12,7 +12,7 @@ numPlayers=input('How many players are there? ')
 while not numPlayers.isNumeric:
     numPlayers=input('Sorry, I didn\'t get that, how many players? ')
 for x in range(int(numPlayers)):
-    player.append(scorecard())
+    player.append(scoreboard())
     name.append(input('What\'s your name? '))
 for x in range(13):
     for turn in range(len(player)):
