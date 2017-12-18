@@ -1,6 +1,6 @@
 import random
 from die import die
-from Yahtzee import scoreboard #?
+from YAHTZEE import scoreboard #?
 
 player=[]
 dice=[]
@@ -71,46 +71,46 @@ for x in range(13):
             player[turn].sixes=-1
             inPlace.append(6)
             inUse+=1
-        if player[turn].fullhouse==-1:
-            player[turn].fullhouse()
-            print(alpha[inUse]+': Take \'Full House\' for '+str(player[turn].fullhouse)+' points')
-            player[turn].fullhouse=0
+        if player[turn].full_house==-1:
+            player[turn].full_house()
+            print(alpha[inUse]+': Take \'Full House\' for '+str(player[turn].full_house)+' points')
+            player[turn].full_house=0
             inPlace.append(7)
             inUse+=1
-        if player[turn].smallstraight==0:
-            player[turn].smallstraight()
-            print(alpha[inUse]+': Take \'Small Straight\' for '+str(player[turn].smallstraight)+' points')
-            player[turn].smallstraight=0
+        if player[turn].small_straight==0:
+            player[turn].small_straight()
+            print(alpha[inUse]+': Take \'Small Straight\' for '+str(player[turn].small_straight)+' points')
+            player[turn].small_straight=0
             inPlace.append(8)
             inUse+=1
-        if player[turn].largestraight==0:
-            player[turn].largestraight()
-            print(alpha[inUse]+': Take \'Large Straight\' for '+str(player[turn].largestraight)+' points')
-            player[turn].largestraight=0
+        if player[turn].large_straight==0:
+            player[turn].large_straight()
+            print(alpha[inUse]+': Take \'Large Straight\' for '+str(player[turn].large_straight)+' points')
+            player[turn].large_straight=0
             inPlace.append(9)
             inUse+=1
-        if player[turn].threeofakind==0:
-            player[turn].threeofakind()
-            print(alpha[inUse]+': Take \'Three of a kind\' for '+str(player[turn].threeofakind)+' points')
-            player[turn].threeofakind=0
+        if player[turn].three_of_a_kind==0:
+            player[turn].three_of_a_kind()
+            print(alpha[inUse]+': Take \'Three of a kind\' for '+str(player[turn].three_of_a_kind)+' points')
+            player[turn].three_of_a_kind=0
             inPlace.append(10)
             inUse+=1
-        if player[turn].fourofakind==0:
-            player[turn].fourofakind()
-            print(alpha[inUse]+': Take \'Four of a kind\' for '+str(player[turn].fourofakind)+' points')
-            player[turn].fourofakind=0
+        if player[turn].four_of_a_kind==0:
+            player[turn].four_of_a_kind()
+            print(alpha[inUse]+': Take \'Four of a kind\' for '+str(player[turn].four_of_a_kind)+' points')
+            player[turn].four_of_a_kind=0
             inPlace.append(11)
             inUse+=1
-        if player[turn].yahtzee==0:
-            player[turn].yahtzee()
-            print(alpha[inUse]+': Take \'Yahtzee\' for '+str(player[turn].yahtzee)+' points')
-            player[turn].yahtzee=0
+        if player[turn].YAHTZEE==0:
+            player[turn].YAHTZEE()
+            print(alpha[inUse]+': Take \'YAHTZEE\' for '+str(player[turn].YAHTZEE)+' points')
+            player[turn].YAHTZEE=0
             inPlace.append(12)
             inUse+=1
-        if player[turn].chance==0:
-            player[turn].chance()
-            print(alpha[inUse]+': Take \'Chance\' for '+str(player[turn].chance)+' points')
-            player[turn].chance=0
+        if player[turn].CHANCE==0:
+            player[turn].CHANCE()
+            print(alpha[inUse]+': Take \'CHANCE\' for '+str(player[turn].CHANCE)+' points')
+            player[turn].CHANCE=0
             inPlace.append(13)
             inUse+=1
         pick=input()
@@ -130,23 +130,23 @@ for x in range(13):
         if inPlace[alpha.find(pick.upper())]==6:
             player[turn].sixes()
         if inPlace[alpha.find(pick.upper())]==7:
-            player[turn].fullhouse()
+            player[turn].full_house()
         if inPlace[alpha.find(pick.upper())]==8:
-            player[turn].smallstraight()
+            player[turn].small_straight()
         if inPlace[alpha.find(pick.upper())]==9:
-            player[turn].largestraight()
+            player[turn].large_straight()
         if inPlace[alpha.find(pick.upper())]==10:
-            player[turn].threeofakind()
+            player[turn].three_of_a_kind()
         if inPlace[alpha.find(pick.upper())]==11:
-            player[turn].fourofakind()
+            player[turn].four_of_a_kind()
         if inPlace[alpha.find(pick.upper())]==12:
-            player[turn].yahtzee()
+            player[turn].YAHTZEE()
         if inPlace[alpha.find(pick.upper())]==13:
-            player[turn].chance()
-        print(names[turn]+'\'s total score is now: '+str(player[turn].aces+player[turn].twos+player[turn].threes+player[turn].fours+player[turn].fives+player[turn].sixes+player[turn].fullhouse+player[turn].smallstraight+player[turn].largestraight+player[turn].threeofakind+player[turn].fourofakind+player[turn].yahtzee+player[turn].chance))
+            player[turn].CHANCE()
+        print(names[turn]+'\'s total score is now: '+str(player[turn].aces+player[turn].twos+player[turn].threes+player[turn].fours+player[turn].fives+player[turn].sixes+player[turn].full_house+player[turn].small_straight+player[turn].large_straight+player[turn].three_of_a_kind+player[turn].four_of_a_kind+player[turn].YAHTZEE+player[turn].CHANCE))
 max=0
 for turn in range(len(player)):
-    if player[turn].aces+player[turn].twos+player[turn].threes+player[turn].fours+player[turn].fives+player[turn].sixes+player[turn].fullhouse+player[turn].smallstraight+player[turn].largestraight+player[turn].threeofakind+player[turn].fourofakind+player[turn].yahtzee+player[turn].chance>max:
-        max=player[turn].aces+player[turn].twos+player[turn].threes+player[turn].fours+player[turn].fives+player[turn].sixes+player[turn].fullhouse+player[turn].smallstraight+player[turn].largestraight+player[turn].threeofakind+player[turn].fourofakind+player[turn].yahtzee+player[turn].chance
+    if player[turn].aces+player[turn].twos+player[turn].threes+player[turn].fours+player[turn].fives+player[turn].sixes+player[turn].full_house+player[turn].small_straight+player[turn].large_straight+player[turn].three_of_a_kind+player[turn].four_of_a_kind+player[turn].YAHTZEE+player[turn].CHANCE>max:
+        max=player[turn].aces+player[turn].twos+player[turn].threes+player[turn].fours+player[turn].fives+player[turn].sixes+player[turn].full_house+player[turn].small_straight+player[turn].large_straight+player[turn].three_of_a_kind+player[turn].four_of_a_kind+player[turn].YAHTZEE+player[turn].CHANCE
         topPlayer=turn
 print('Congratulations '+names[topPlayer]+'! You won with a score of '+str(max)+'!')
