@@ -9,8 +9,8 @@ class scoreboard:
     self.three_of_a_kind = -1
     self.four_of_a_kind = -1
     self.full_house = -1
-    self.small_strait = -1
-    self.large_strait = -1
+    self.small_straight = -1
+    self.large_straight = -1
     self.YAHTZEE = -1
     self.CHANCE = -1
 
@@ -128,7 +128,7 @@ class scoreboard:
 
 		self.small_straight = points
 
-	def large_strait(): #check
+	def large_straight(): #check
 		points = 0
 		points = points + 40
 
