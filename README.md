@@ -1,4 +1,6 @@
 # The-Yahtzee-Project
+![](https://cardgames.io/yahtzee/images/yahtzee-logo.png)
+
 
 In this repository, there is a Yahtzee Game!
 
@@ -16,7 +18,6 @@ https://guides.github.com/features/mastering-markdown/
 On my honor, I have niether given nor recieved unauthorized aid on this assignment. 
 
 
-![](https://cardgames.io/yahtzee/images/yahtzee-logo.png)
 
 
 
