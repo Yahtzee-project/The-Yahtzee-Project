@@ -1,5 +1,35 @@
 # The-Yahtzee-Project
-In this repository, Yahtzee lives
+![](https://cardgames.io/yahtzee/images/yahtzee-logo.png)
+
+### General:
+
+In this repository, there is a Yahtzee Game!
+
+Project by Jonathan Geller and Rohin Shivdasani
+
+12/9/17
+
+Sources:
+http://www.thegeekstuff.com/2013/06/python-list/?utm_source=feedly
+https://wiki.python.org/moin/HowTo/Sorting
+http://www.diveintopython.net/file_handling/for_loops.html
+https://guides.github.com/features/mastering-markdown/
+-Andy Si and Mitchell Jones helped minimally helped Rohin one night with some things in the Scorecard Class
+
+On my honor, I have niether given nor recieved unauthorized aid on this assignment. 
+
+
+
+
+### Project-Partner Task Designation:
+
+Rohin - Build the Scorecard Class (functions for each option with dice checking and point assignment)
+      - READ.me file
+      
+Jonathan - Main code (user interface, gameplay)
+
+
+### Original Planning Outline/Structure:
 
 Class Scorecard
 
