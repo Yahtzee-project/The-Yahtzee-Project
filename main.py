@@ -1,5 +1,5 @@
 import random
-from die import die
+from die import Die
 from Yatzee import Scoreboard #?
 
 player=[]
@@ -7,12 +7,12 @@ dice=[]
 names=[]
 alpha='ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 for x in range(5):
-    dice.append(die())
+    dice.append(Die())
 numPlayers=input('How many players are there? ')
 while not numPlayers.isnumeric():
     numPlayers=input('Sorry, I didn\'t get that, how many players? ')
 for x in range(int(numPlayers)):
-    player.append(Scoreboard())
+    player.append(Scoreboard()) #set up players
     names.append(input('What\'s your name? '))
 for x in range(12):
     for turn in range(len(player)):
@@ -23,6 +23,8 @@ for x in range(12):
         print('You rolled '+str(diceValues[0])+', '+str(diceValues[1])+', '+str(diceValues[2])+', '+str(diceValues[3])+', '+str(diceValues[4]))
         print('Which number dice would you like to reroll?')
         reroll=input()
+        if reroll=='quit':
+            quit()
         for y in range(len(reroll)):
             if reroll[y].isnumeric():
                 dice[int(reroll[y])-1].roll()
@@ -30,6 +32,8 @@ for x in range(12):
         print('You rolled '+str(diceValues[0])+', '+str(diceValues[1])+', '+str(diceValues[2])+', '+str(diceValues[3])+', '+str(diceValues[4]))
         print('Which number dice would you like to reroll?')
         reroll=input()
+        if reroll=='quit':
+            quit()
         for y in range(len(reroll)):
             if reroll[y].isnumeric():
                 dice[int(reroll[y])-1].roll()
@@ -38,12 +42,12 @@ for x in range(12):
         print('Which of the following would you like to use?')
         inUse=0
         inPlace=[]
-        if player[turn].acesV==-1:
-            player[turn].aces(diceValues)
-            print(alpha[inUse]+': Take \'Aces\' for '+str(player[turn].acesV)+' points')
-            player[turn].acesV=-1
-            inPlace.append(1)
-            inUse+=1
+        if player[turn].acesV==-1: #if value hasn't been filled in yet
+            player[turn].aces(diceValues) #set the value to what it should be
+            print(alpha[inUse]+': Take \'Aces\' for '+str(player[turn].acesV)+' points') #offer the option
+            player[turn].acesV=-1 #reset value, in case player doesn't take it
+            inPlace.append(1) #set up a list so that code knows where it is in the list
+            inUse+=1 #how many have been used yet
         if player[turn].twosV==-1:
             player[turn].twos(diceValues)
             print(alpha[inUse]+': Take \'Twos\' for '+str(player[turn].twosV)+' points')
@@ -80,7 +84,6 @@ for x in range(12):
             player[turn].full_houseV=-1
             inPlace.append(7)
             inUse+=1
-            diceValues=[dice[0].faceUp,dice[1].faceUp,dice[2].faceUp,dice[3].faceUp,dice[4].faceUp]
         if player[turn].small_straightV==-1:
             player[turn].small_straight(diceValues)
             print(alpha[inUse]+': Take \'Small Straight\' for '+str(player[turn].small_straightV)+' points')
@@ -135,7 +138,6 @@ for x in range(12):
             player[turn].sixes(diceValues)
         if inPlace[alpha.find(pick.upper())]==7:
             player[turn].full_house(diceValues)
-            diceValues=[dice[0].faceUp,dice[1].faceUp,dice[2].faceUp,dice[3].faceUp,dice[4].faceUp]
         if inPlace[alpha.find(pick.upper())]==8:
             player[turn].small_straight(diceValues)
         if inPlace[alpha.find(pick.upper())]==9:
@@ -148,7 +150,7 @@ for x in range(12):
             player[turn].YAHTZEE(diceValues)
         if inPlace[alpha.find(pick.upper())]==13:
             player[turn].CHANCE(diceValues)
-        print(names[turn]+'\'s total score is now: '+str(player[turn].acesV+player[turn].twosV+player[turn].threesV+player[turn].foursV+player[turn].fivesV+player[turn].sixesV+player[turn].full_houseV+player[turn].small_straightV+player[turn].large_straightV+player[turn].three_of_a_kindV+player[turn].four_of_a_kindV+player[turn].YAHTZEEV+player[turn].CHANCEV))
+        print(names[turn]+'\'s total score is now: '+str(player[turn].acesV+player[turn].twosV+player[turn].threesV+player[turn].foursV+player[turn].fivesV+player[turn].sixesV+player[turn].full_houseV+player[turn].small_straightV+player[turn].large_straightV+player[turn].three_of_a_kindV+player[turn].four_of_a_kindV+player[turn].YAHTZEEV+player[turn].CHANCEV+11-x))
 max=0
 for turn in range(len(player)):
     if player[turn].acesV+player[turn].twosV+player[turn].threesV+player[turn].foursV+player[turn].fivesV+player[turn].sixesV+player[turn].full_houseV+player[turn].small_straightV+player[turn].large_straightV+player[turn].three_of_a_kindV+player[turn].four_of_a_kindV+player[turn].YAHTZEEV+player[turn].CHANCEV>max:

@@ -113,26 +113,7 @@ class Scoreboard:
         self.four_of_a_kindV = points
     def full_house(self, dice):
         points=0
-        newDice=dice
-        twoDone=False
-        threeDone=False
-        q=False
-        for x in range(len(newDice)):
-            for y in range(x+1,len(newDice)):
-                if newDice[x]==newDice[y]:
-                    Num1=newDice[x]
-                    if x>y:
-                        newDice.pop(x)
-                        newDice.pop(y)
-                    else:
-                        newDice.pop(y)
-                        newDice.pop(x)
-                    twoDone=True
-                    q=True
-                    break
-            if q:
-                break
-        if twoDone and ((newDice[1]==newDice[2] and newDice[0]==Num1) or (newDice[0]==newDice[2] and newDice[1]==Num1) or (newDice[1]==newDice[0] and newDice[2]==Num1) or (newDice[0]==newDice[1] and newDice[1]==newDice[2])):
+        if (dice[0]==dice[1] and dice[2]==dice[3] and dice[3]==dice[4]) or (dice[0]==dice[2] and dice[1]==dice[3] and dice[3]==dice[4]) or (dice[0]==dice[3] and dice[2]==dice[1] and dice[1]==dice[4]) or (dice[0]==dice[4] and dice[2]==dice[3] and dice[3]==dice[1]) or (dice[1]==dice[2] and dice[0]==dice[3] and dice[3]==dice[4]) or (dice[3]==dice[1] and dice[2]==dice[0] and dice[0]==dice[4]) or (dice[4]==dice[1] and dice[2]==dice[3] and dice[3]==dice[0]) or (dice[2]==dice[3] and dice[1]==dice[0] and dice[0]==dice[4]) or (dice[2]==dice[4] and dice[1]==dice[3] and dice[3]==dice[0]) or (dice[3]==dice[4] and dice[2]==dice[0] and dice[0]==dice[1]): # a silly ad hoc fix, every possible full house
             points==25
         self.full_houseV=points
     def small_straight(self, dice):

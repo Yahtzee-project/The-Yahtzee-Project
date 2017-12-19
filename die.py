@@ -1,5 +1,5 @@
 import random
-class die:
+class Die:
     def __init__(self):
         self.faceUp=1
     def roll(self):
