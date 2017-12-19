@@ -91,102 +91,99 @@ class scoreboard:
         if dice[4] == 6:
             points = points+6
         self.aces = points
-    def three_of_a_kind(self, dice): #check
+    def three_of_a_kind(self, dice):
         points = 0
-        for i in range(1,6):
-            for k in range(0,4):
-                j=0
-                if dice[k] == i:
-                    j=j+1
-                if j=3:
+        for i in range(0,3):
+            track = 0
+            for k in range(i+1,5):
+                if dice[i]==dice[k]:
+                    track+=1
+                if j==2:
                     points = int(dice[0] + dice[1] + dice[2] + dice[3] + dice[4])
         self.three_of_a_kind = points
-	def four_of_a_kind(self, dice): #check
-		points = 0
-		for i in range(1,7):
-			for k in range(0,4):
-				j=0;
-				if dice[k] == i:
-					return j=j+1
-				if j==4:
-					points = int(dice[0] + dice[1] + dice[2] + dice[3] + dice[4])
-		self.four_of_a_kind = points
-	def full_house(self, dice):
-		points = 0
-		for i in range(1,7):
-			for k in range(0,5):
-				j=0
-				if dice[k] == i:
-					return j=j+1
-					return dice[k] = 0
-				if j=3:
-					for m in range(1,6):
-					for l in range (0,4):
-						n=0
-						if dice[l] == m:
-							return n=n+1
-							if n = 2:
-								points = points + 25
-		self.full_house = points
-	def small_straight(self, dice): #check
-		points = 0
-		q=False
+    def four_of_a_kind(self, dice):
+        points = 0
+        for i in range(0,2):
+            track = 0
+            for k in range(i+1,5):
+                if dice[i]==dice[k]:
+                    track+=1
+                if j==3:
+                    points = int(dice[0] + dice[1] + dice[2] + dice[3] + dice[4])
+        self.four_of_a_kind = points
+    def full_house(self, dice):
+        points=0
         newDice=dice
-		for x in range(len(newDice)):
-            if newDice[x]=1:
+        twoDone=False
+        threeDone=False
+        for x in range(len(newDice)):
+            for y in range(x+1,len(newDice)):
+                if newDice[x]==newDice[y]:
+                    Num1=newDice[x]
+                    newDice.pop(x)
+                    newDice.pop(y)
+                    twoDone=True
+                    break
+        if twoDone and ((newDice[1]==newDice[2] and newDice[0]==Num1) or (newDice[0]==newDice[2] and newDice[1]==Num1) or (newDice[1]==newDice[0] and newDice[2]==Num1) or (newDice[0]==newDice[1] and newDice[1]==newDice[2])):
+            points==25
+    def small_straight(self, dice):
+        points = 0
+        q=False
+        newDice=dice
+        for x in range(len(newDice)):
+            if newDice[x]==1:
                 a=True
         for x in range(len(newDice)):
-            if newDice[x]=2:
+            if newDice[x]==2:
                 b=True
         for x in range(len(newDice)):
-            if newDice[x]=3:
+            if newDice[x]==3:
                 c=True
         for x in range(len(newDice)):
-            if newDice[x]=4:
+            if newDice[x]==4:
                 d=True
         for x in range(len(newDice)):
-            if newDice[x]=5:
+            if newDice[x]==5:
                 e=True
         for x in range(len(newDice)):
-            if newDice[x]=6:
+            if newDice[x]==6:
                 f=True       
-		if (a and b and c and d) or (e and b and c and d) or (e and f and c and d)
+        if (a and b and c and d) or (e and b and c and d) or (e and f and c and d):
             points = points + 30
-		self.small_straight = points
-	def large_straight(): #check
-		points = 0
-		points = 0
-		q=False
+        self.small_straight = points
+    def large_straight(): #check
+        points = 0
+        q=False
         newDice=dice
-		for x in range(len(newDice)):
-            if newDice[x]=1:
+        for x in range(len(newDice)):
+            if newDice[x]==1:
                 a=True
         for x in range(len(newDice)):
-            if newDice[x]=2:
+            if newDice[x]==2:
                 b=True
         for x in range(len(newDice)):
-            if newDice[x]=3:
+            if newDice[x]==3:
                 c=True
         for x in range(len(newDice)):
-            if newDice[x]=4:
+            if newDice[x]==4:
                 d=True
         for x in range(len(newDice)):
-            if newDice[x]=5:
+            if newDice[x]==5:
                 e=True
         for x in range(len(newDice)):
-            if newDice[x]=6:
+            if newDice[x]==6:
                 f=True       
-		if (a and b and c and d and e) or (f and e and b and c and d)
+        if (a and b and c and d and e) or (f and e and b and c and d):
             points = points + 40
-	def YAHTZEE():
-		points = 0
-		if dice[0] == dice[1] and dice[1] == dice[2] and dice[2] == dice[3] and dice[3] == dice[4]:
-			points = points + 50
-		self.YAHTZEE = points
-	def CHANCE():
-		points = 0
-		points = int(dice[0] + dice[1] + dice[2] + dice[3] + dice[4])
-		self.CHANCE = points
+    def YAHTZEE():
+        points = 0
+        if dice[0] == dice[1] and dice[1] == dice[2] and dice[2] == dice[3] and dice[3] == dice[4]:
+            points = points + 50
+        self.YAHTZEE = points
+    def CHANCE():
+        points = 0
+        points = int(dice[0] + dice[1] + dice[2] + dice[3] + dice[4])
+        self.CHANCE = points
 	
 		
 		
