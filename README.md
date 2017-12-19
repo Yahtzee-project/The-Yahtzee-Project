@@ -1,8 +1,10 @@
-# The-Yahtzee-Project
+## The-Yahtzee-Project
 
 In this repository, there is a Yahtzee Game!
 
 Project by Jonathan Geller and Rohin Shivdasani
+
+12/9/17
 
 Sources:
 http://www.thegeekstuff.com/2013/06/python-list/?utm_source=feedly
@@ -20,7 +22,7 @@ On my honor, I have niether given nor recieved unauthorized aid on this assignme
 
 
 
-
+# Original Planning Outline/Structure:
 
 Class Scorecard
 
