@@ -1,3 +1,6 @@
+import sorted
+
+
 class scoreboard:
   def __init__(self):
     self.aces = -1
@@ -17,6 +20,8 @@ class scoreboard:
 
 
 diceList = [dice[0],dice[1],dice[2],dice[3],dice[4],dice[5]]
+
+diceListsorted = diceList.sorted()
 
 def count(x):
 		output = 0
@@ -179,17 +184,8 @@ def count(x):
 
 	def large_straight(): #check
 		points = 0
-		for m in range(1,6):
-			for l in range (0,4):
-				n=0
-				if dice[l] == m:
-					return n=n+1
-					if n = 2:
-						points = 0
-		
-		
-		
-		points = points + 40
+		if count(die[0]) == 1 and count(die[1]) == 1 and count(die[2]) == 1 and count(die[3]) == 1 and count(die[4]) == 1:
+			points = points + 40
 
 		self.large_straight = points
 
