@@ -29,7 +29,6 @@ def count(x):
 			if (d == x):
 				output = output+1
 		return output
-#print(count(3))
 
 
 
@@ -202,14 +201,6 @@ def count(x):
 
 		self.CHANCE = points
 	
-	
-	
-	def count(x):
-		output = 0
-		for d in dice:
-			if (d == x):
-				output = output+1
-		return output
 		
 		
 		
