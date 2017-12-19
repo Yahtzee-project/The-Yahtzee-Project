@@ -1,6 +1,6 @@
 class Scoreboard:
     def __init__(self):
-        self.acesV = -1
+        self.acesV = -1 #values equal -1 initially to show that they haven't been filled in
         self.twosV = -1
         self.threesV = -1
         self.foursV = -1
@@ -13,9 +13,9 @@ class Scoreboard:
         self.large_straightV = -1
         self.YAHTZEEV = -1
         self.CHANCEV = -1
-    def aces(self, dice):
+    def aces(self, dice): #take dice
         points = 0
-        if dice[0] == 1:
+        if dice[0] == 1: #add 1 for each die that matches number
             points = points+1
         if dice[1] == 1:
             points = points+1
@@ -91,7 +91,7 @@ class Scoreboard:
         if dice[4] == 6:
             points = points+6
         self.sixesV = points
-    def three_of_a_kind(self, dice):
+    def three_of_a_kind(self, dice): #if there are three matching, total=value
         points = 0
         for i in range(0,3):
             track = 0
@@ -116,7 +116,7 @@ class Scoreboard:
         if (dice[0]==dice[1] and dice[2]==dice[3] and dice[3]==dice[4]) or (dice[0]==dice[2] and dice[1]==dice[3] and dice[3]==dice[4]) or (dice[0]==dice[3] and dice[2]==dice[1] and dice[1]==dice[4]) or (dice[0]==dice[4] and dice[2]==dice[3] and dice[3]==dice[1]) or (dice[1]==dice[2] and dice[0]==dice[3] and dice[3]==dice[4]) or (dice[3]==dice[1] and dice[2]==dice[0] and dice[0]==dice[4]) or (dice[4]==dice[1] and dice[2]==dice[3] and dice[3]==dice[0]) or (dice[2]==dice[3] and dice[1]==dice[0] and dice[0]==dice[4]) or (dice[2]==dice[4] and dice[1]==dice[3] and dice[3]==dice[0]) or (dice[3]==dice[4] and dice[2]==dice[0] and dice[0]==dice[1]): # a silly ad hoc fix, every possible full house
             points=25
         self.full_houseV=points
-    def small_straight(self, dice):
+    def small_straight(self, dice): # if there's 1234, 2345, or 3456 then it =30
         points = 0
         q=False
         newDice=dice
@@ -147,7 +147,7 @@ class Scoreboard:
         if (a and b and c and d) or (e and b and c and d) or (e and f and c and d):
             points = points + 30
         self.small_straightV = points
-    def large_straight(self, dice): #check
+    def large_straight(self, dice): #if there's 12345 or 23456 then =40
         points = 0
         q=False
         newDice=dice
@@ -178,12 +178,12 @@ class Scoreboard:
         if (a and b and c and d and e) or (f and e and b and c and d):
             points = points + 40
         self.large_straightV=points
-    def YAHTZEE(self, dice):
+    def YAHTZEE(self, dice): #if they're all the same, =50
         points = 0
         if dice[0] == dice[1] and dice[1] == dice[2] and dice[2] == dice[3] and dice[3] == dice[4]:
             points = points + 50
         self.YAHTZEEV = points
-    def CHANCE(self, dice):
+    def CHANCE(self, dice): #just add every die
         points = 0
         points = int(dice[0] + dice[1] + dice[2] + dice[3] + dice[4])
         self.CHANCEV = points

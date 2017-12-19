@@ -14,16 +14,16 @@ while not numPlayers.isnumeric():
 for x in range(int(numPlayers)):
     player.append(Scoreboard()) #set up players
     names.append(input('What\'s your name? '))
-for x in range(12):
-    for turn in range(len(player)):
+for x in range(12): #this runs once for each value on the scorecard
+    for turn in range(len(player)): #runs once per player
         print('Ok '+names[turn]+', your turn now!')
         for y in range(5):
             dice[y].roll()
-        diceValues=[dice[0].faceUp,dice[1].faceUp,dice[2].faceUp,dice[3].faceUp,dice[4].faceUp]
+        diceValues=[dice[0].faceUp,dice[1].faceUp,dice[2].faceUp,dice[3].faceUp,dice[4].faceUp] #create an array of the dice values so that they can be accessed easily
         print('You rolled '+str(diceValues[0])+', '+str(diceValues[1])+', '+str(diceValues[2])+', '+str(diceValues[3])+', '+str(diceValues[4]))
         print('Which number dice would you like to reroll?')
         reroll=input()
-        if reroll=='quit':
+        if reroll=='quit': #mostly for developing/testing the code
             quit()
         for y in range(len(reroll)):
             if reroll[y].isnumeric():
@@ -40,7 +40,7 @@ for x in range(12):
         diceValues=[dice[0].faceUp,dice[1].faceUp,dice[2].faceUp,dice[3].faceUp,dice[4].faceUp]
         print('You rolled '+str(diceValues[0])+', '+str(diceValues[1])+', '+str(diceValues[2])+', '+str(diceValues[3])+', '+str(diceValues[4]))
         print('Which of the following would you like to use?')
-        inUse=0
+        inUse=0 #helps keep the letters for the options in order
         inPlace=[]
         if player[turn].acesV==-1: #if value hasn't been filled in yet
             player[turn].aces(diceValues) #set the value to what it should be
@@ -48,7 +48,7 @@ for x in range(12):
             player[turn].acesV=-1 #reset value, in case player doesn't take it
             inPlace.append(1) #set up a list so that code knows where it is in the list
             inUse+=1 #how many have been used yet
-        if player[turn].twosV==-1:
+        if player[turn].twosV==-1: #This can't really be shortened into a loop because there are different functions being called
             player[turn].twos(diceValues)
             print(alpha[inUse]+': Take \'Twos\' for '+str(player[turn].twosV)+' points')
             player[turn].twosV=-1
@@ -123,7 +123,7 @@ for x in range(12):
         pick=input()
         while len(pick)!=1 or not pick.isalpha():
             print('You must pick exacly one option')
-            pick=input()
+            pick=input() #figure out which option the user picked
         if inPlace[alpha.find(pick.upper())]==1:
             player[turn].aces(diceValues)
         if inPlace[alpha.find(pick.upper())]==2:
@@ -150,10 +150,10 @@ for x in range(12):
             player[turn].YAHTZEE(diceValues)
         if inPlace[alpha.find(pick.upper())]==13:
             player[turn].CHANCE(diceValues)
-        print(names[turn]+'\'s total score is now: '+str(player[turn].acesV+player[turn].twosV+player[turn].threesV+player[turn].foursV+player[turn].fivesV+player[turn].sixesV+player[turn].full_houseV+player[turn].small_straightV+player[turn].large_straightV+player[turn].three_of_a_kindV+player[turn].four_of_a_kindV+player[turn].YAHTZEEV+player[turn].CHANCEV+11-x))
-max=0
+        print(names[turn]+'\'s total score is now: '+str(player[turn].acesV+player[turn].twosV+player[turn].threesV+player[turn].foursV+player[turn].fivesV+player[turn].sixesV+player[turn].full_houseV+player[turn].small_straightV+player[turn].large_straightV+player[turn].three_of_a_kindV+player[turn].four_of_a_kindV+player[turn].YAHTZEEV+player[turn].CHANCEV+11-x)) #add up the player's score, then add (11-#of turns so far) because the "-1"s should be 0s for total score purposes
+max=0 #use this to find highest scores
 for turn in range(len(player)):
-    if player[turn].acesV+player[turn].twosV+player[turn].threesV+player[turn].foursV+player[turn].fivesV+player[turn].sixesV+player[turn].full_houseV+player[turn].small_straightV+player[turn].large_straightV+player[turn].three_of_a_kindV+player[turn].four_of_a_kindV+player[turn].YAHTZEEV+player[turn].CHANCEV>max:
+    if player[turn].acesV+player[turn].twosV+player[turn].threesV+player[turn].foursV+player[turn].fivesV+player[turn].sixesV+player[turn].full_houseV+player[turn].small_straightV+player[turn].large_straightV+player[turn].three_of_a_kindV+player[turn].four_of_a_kindV+player[turn].YAHTZEEV+player[turn].CHANCEV>max: #find top score
         max=player[turn].acesV+player[turn].twosV+player[turn].threesV+player[turn].foursV+player[turn].fivesV+player[turn].sixesV+player[turn].full_houseV+player[turn].small_straightV+player[turn].large_straightV+player[turn].three_of_a_kindV+player[turn].four_of_a_kindV+player[turn].YAHTZEEV+player[turn].CHANCEV
         topPlayer=turn
-print('Congratulations '+names[topPlayer]+'! You won with a score of '+str(max)+'!')
+print('Congratulations '+names[topPlayer]+'! You won with a score of '+str(max)+'!') #tell winner that they won
