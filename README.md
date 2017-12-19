@@ -1,6 +1,7 @@
 # The-Yahtzee-Project
 ![](https://cardgames.io/yahtzee/images/yahtzee-logo.png)
 
+### General
 
 In this repository, there is a Yahtzee Game!
 
