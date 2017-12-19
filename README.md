@@ -20,7 +20,12 @@ On my honor, I have niether given nor recieved unauthorized aid on this assignme
 
 
 
+### Project-Partner Task Designation:
 
+Rohin - Build the Scorecard Class (functions for each option with dice checking and point assignment)
+      - READ.me file
+      
+Jonathan - Main code (user interface, gameplay)
 
 
 ### Original Planning Outline/Structure:
