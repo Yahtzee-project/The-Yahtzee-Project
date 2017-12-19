@@ -106,13 +106,25 @@ class scoreboard:
 
 	def three_of_a_kind(): #check
 		points = 0
-		points = int(dice[0] + dice[1] + dice[2] + dice[3] + dice[4] + dice[5])
+		for i in range(1,6):
+			for k in range(0,4):
+				j=0;
+				if dice[k] == i:
+					return j=j+1
+				if j=3:
+					points = int(dice[0] + dice[1] + dice[2] + dice[3] + dice[4] + dice[5])
 
 		self.three_of_a_kind = points
 
 	def four_of_a_kind(): #check
 		points = 0
-		points = int(dice[0] + dice[1] + dice[2] + dice[3] + dice[4] + dice[5])
+		for i in range(1,6):
+			for k in range(0,4):
+				j=0;
+				if dice[k] == i:
+					return j=j+1
+				if j=4:
+					points = int(dice[0] + dice[1] + dice[2] + dice[3] + dice[4] + dice[5])
 
 		self.four_of_a_kind = points
 
