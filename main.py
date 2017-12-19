@@ -1,6 +1,6 @@
 import random
 from die import die
-from Yatzee import scoreboard #?
+from Yatzee import Scoreboard #?
 
 player=[]
 dice=[]
@@ -12,9 +12,9 @@ numPlayers=input('How many players are there? ')
 while not numPlayers.isnumeric():
     numPlayers=input('Sorry, I didn\'t get that, how many players? ')
 for x in range(int(numPlayers)):
-    player.append(scoreboard())
+    player.append(Scoreboard())
     names.append(input('What\'s your name? '))
-for x in range(13):
+for x in range(12):
     for turn in range(len(player)):
         print('Ok '+names[turn]+', your turn now!')
         for y in range(5):
@@ -38,86 +38,87 @@ for x in range(13):
         print('Which of the following would you like to use?')
         inUse=0
         inPlace=[]
-        if player[turn].aces==-1:
+        if player[turn].acesV==-1:
             player[turn].aces(diceValues)
-            print(alpha[inUse]+': Take \'Aces\' for '+str(player[turn].aces)+' points')
-            player[turn].aces=-1
+            print(alpha[inUse]+': Take \'Aces\' for '+str(player[turn].acesV)+' points')
+            player[turn].acesV=-1
             inPlace.append(1)
             inUse+=1
-        if player[turn].twos==-1:
+        if player[turn].twosV==-1:
             player[turn].twos(diceValues)
-            print(alpha[inUse]+': Take \'Twos\' for '+str(player[turn].twos)+' points')
-            player[turn].twos=-1
+            print(alpha[inUse]+': Take \'Twos\' for '+str(player[turn].twosV)+' points')
+            player[turn].twosV=-1
             inPlace.append(2)
             inUse+=1
-        if player[turn].threes==-1:
+        if player[turn].threesV==-1:
             player[turn].threes(diceValues)
-            print(alpha[inUse]+': Take \'Threes\' for '+str(player[turn].three)+' points')
-            player[turn].threes=-1
+            print(alpha[inUse]+': Take \'Threes\' for '+str(player[turn].threesV)+' points')
+            player[turn].threesV=-1
             inPlace.append(3)
             inUse+=1
-        if player[turn].fours==-1:
+        if player[turn].foursV==-1:
             player[turn].fours(diceValues)
-            print(alpha[inUse]+': Take \'Fours\' for '+str(player[turn].fours)+' points')
-            player[turn].fours=-1
+            print(alpha[inUse]+': Take \'Fours\' for '+str(player[turn].foursV)+' points')
+            player[turn].foursV=-1
             inPlace.append(4)
             inUse+=1
-        if player[turn].fives==-1:
+        if player[turn].fivesV==-1:
             player[turn].fives(diceValues)
-            print(alpha[inUse]+': Take \'Fives\' for '+str(player[turn].fives)+' points')
-            player[turn].fives=0
+            print(alpha[inUse]+': Take \'Fives\' for '+str(player[turn].fivesV)+' points')
+            player[turn].fivesV=0
             inPlace.append(5)
             inUse+=1
-        if player[turn].sixes==-1:
+        if player[turn].sixesV==-1:
             player[turn].sixes(diceValues)
-            print(alpha[inUse]+': Take \'Sixes\' for '+str(player[turn].sixes)+' points')
-            player[turn].sixes=-1
+            print(alpha[inUse]+': Take \'Sixes\' for '+str(player[turn].sixesV)+' points')
+            player[turn].sixesV=-1
             inPlace.append(6)
             inUse+=1
-        if player[turn].full_house==-1:
+        if player[turn].full_houseV==-1:
             player[turn].full_house(diceValues)
-            print(alpha[inUse]+': Take \'Full House\' for '+str(player[turn].full_house)+' points')
-            player[turn].full_house=0
+            print(alpha[inUse]+': Take \'Full House\' for '+str(player[turn].full_houseV)+' points')
+            player[turn].full_houseV=-1
             inPlace.append(7)
             inUse+=1
-        if player[turn].small_straight==0:
+            diceValues=[dice[0].faceUp,dice[1].faceUp,dice[2].faceUp,dice[3].faceUp,dice[4].faceUp]
+        if player[turn].small_straightV==-1:
             player[turn].small_straight(diceValues)
-            print(alpha[inUse]+': Take \'Small Straight\' for '+str(player[turn].small_straight)+' points')
-            player[turn].small_straight=0
+            print(alpha[inUse]+': Take \'Small Straight\' for '+str(player[turn].small_straightV)+' points')
+            player[turn].small_straightV=-1
             inPlace.append(8)
             inUse+=1
-        if player[turn].large_straight==0:
+        if player[turn].large_straightV==-1:
             player[turn].large_straight(diceValues)
-            print(alpha[inUse]+': Take \'Large Straight\' for '+str(player[turn].large_straight)+' points')
-            player[turn].large_straight=0
+            print(alpha[inUse]+': Take \'Large Straight\' for '+str(player[turn].large_straightV)+' points')
+            player[turn].large_straightV=-1
             inPlace.append(9)
             inUse+=1
-        if player[turn].three_of_a_kind==0:
+        if player[turn].three_of_a_kindV==-1:
             player[turn].three_of_a_kind(diceValues)
-            print(alpha[inUse]+': Take \'Three of a kind\' for '+str(player[turn].three_of_a_kind)+' points')
-            player[turn].three_of_a_kind=0
+            print(alpha[inUse]+': Take \'Three of a kind\' for '+str(player[turn].three_of_a_kindV)+' points')
+            player[turn].three_of_a_kindV=-1
             inPlace.append(10)
             inUse+=1
-        if player[turn].four_of_a_kind==0:
+        if player[turn].four_of_a_kindV==-1:
             player[turn].four_of_a_kind(diceValues)
-            print(alpha[inUse]+': Take \'Four of a kind\' for '+str(player[turn].four_of_a_kind)+' points')
-            player[turn].four_of_a_kind=0
+            print(alpha[inUse]+': Take \'Four of a kind\' for '+str(player[turn].four_of_a_kindV)+' points')
+            player[turn].four_of_a_kindV=-1
             inPlace.append(11)
             inUse+=1
-        if player[turn].YAHTZEE==0:
+        if player[turn].YAHTZEEV==-1:
             player[turn].YAHTZEE(diceValues)
-            print(alpha[inUse]+': Take \'YAHTZEE\' for '+str(player[turn].YAHTZEE)+' points')
-            player[turn].YAHTZEE=0
+            print(alpha[inUse]+': Take \'YAHTZEE\' for '+str(player[turn].YAHTZEEV)+' points')
+            player[turn].YAHTZEEV=-1
             inPlace.append(12)
             inUse+=1
-        if player[turn].CHANCE==0:
+        if player[turn].CHANCEV==-1:
             player[turn].CHANCE(diceValues)
-            print(alpha[inUse]+': Take \'CHANCE\' for '+str(player[turn].CHANCE)+' points')
-            player[turn].CHANCE=0
+            print(alpha[inUse]+': Take \'CHANCE\' for '+str(player[turn].CHANCEV)+' points')
+            player[turn].CHANCEV=-1
             inPlace.append(13)
             inUse+=1
         pick=input()
-        while len(pick)!=1 or not pick.isAlpha():
+        while len(pick)!=1 or not pick.isalpha():
             print('You must pick exacly one option')
             pick=input()
         if inPlace[alpha.find(pick.upper())]==1:
@@ -134,6 +135,7 @@ for x in range(13):
             player[turn].sixes(diceValues)
         if inPlace[alpha.find(pick.upper())]==7:
             player[turn].full_house(diceValues)
+            diceValues=[dice[0].faceUp,dice[1].faceUp,dice[2].faceUp,dice[3].faceUp,dice[4].faceUp]
         if inPlace[alpha.find(pick.upper())]==8:
             player[turn].small_straight(diceValues)
         if inPlace[alpha.find(pick.upper())]==9:
@@ -146,10 +148,10 @@ for x in range(13):
             player[turn].YAHTZEE(diceValues)
         if inPlace[alpha.find(pick.upper())]==13:
             player[turn].CHANCE(diceValues)
-        print(names[turn]+'\'s total score is now: '+str(player[turn].aces+player[turn].twos+player[turn].threes+player[turn].fours+player[turn].fives+player[turn].sixes+player[turn].full_house+player[turn].small_straight+player[turn].large_straight+player[turn].three_of_a_kind+player[turn].four_of_a_kind+player[turn].YAHTZEE+player[turn].CHANCE))
+        print(names[turn]+'\'s total score is now: '+str(player[turn].acesV+player[turn].twosV+player[turn].threesV+player[turn].foursV+player[turn].fivesV+player[turn].sixesV+player[turn].full_houseV+player[turn].small_straightV+player[turn].large_straightV+player[turn].three_of_a_kindV+player[turn].four_of_a_kindV+player[turn].YAHTZEEV+player[turn].CHANCEV))
 max=0
 for turn in range(len(player)):
-    if player[turn].aces+player[turn].twos+player[turn].threes+player[turn].fours+player[turn].fives+player[turn].sixes+player[turn].full_house+player[turn].small_straight+player[turn].large_straight+player[turn].three_of_a_kind+player[turn].four_of_a_kind+player[turn].YAHTZEE+player[turn].CHANCE>max:
-        max=player[turn].aces+player[turn].twos+player[turn].threes+player[turn].fours+player[turn].fives+player[turn].sixes+player[turn].full_house+player[turn].small_straight+player[turn].large_straight+player[turn].three_of_a_kind+player[turn].four_of_a_kind+player[turn].YAHTZEE+player[turn].CHANCE
+    if player[turn].acesV+player[turn].twosV+player[turn].threesV+player[turn].foursV+player[turn].fivesV+player[turn].sixesV+player[turn].full_houseV+player[turn].small_straightV+player[turn].large_straightV+player[turn].three_of_a_kindV+player[turn].four_of_a_kindV+player[turn].YAHTZEEV+player[turn].CHANCEV>max:
+        max=player[turn].acesV+player[turn].twosV+player[turn].threesV+player[turn].foursV+player[turn].fivesV+player[turn].sixesV+player[turn].full_houseV+player[turn].small_straightV+player[turn].large_straightV+player[turn].three_of_a_kindV+player[turn].four_of_a_kindV+player[turn].YAHTZEEV+player[turn].CHANCEV
         topPlayer=turn
 print('Congratulations '+names[topPlayer]+'! You won with a score of '+str(max)+'!')
