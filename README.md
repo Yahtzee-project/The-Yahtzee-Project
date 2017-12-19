@@ -1,5 +1,22 @@
 # The-Yahtzee-Project
-In this repository, Yahtzee lives
+
+In this repository, there is a Yahtzee Game!
+
+Project by Jonathan Geller and Rohin Shivdasani
+
+Sources:
+http://www.thegeekstuff.com/2013/06/python-list/?utm_source=feedly
+https://wiki.python.org/moin/HowTo/Sorting
+http://www.diveintopython.net/file_handling/for_loops.html
+(Andy Si and Mitchell Jones helped minimally helped Rohin one night with some things in the Scorecard Class)
+
+On m
+
+
+
+
+
+
 
 Class Scorecard
 
