@@ -112,7 +112,7 @@ class scoreboard:
 				if dice[k] == i:
 					return j=j+1
 				if j=3:
-					points = int(dice[0] + dice[1] + dice[2] + dice[3] + dice[4] + dice[5])
+					points = int(dice[0] + dice[1] + dice[2] + dice[3] + dice[4])
 
 		self.three_of_a_kind = points
 
@@ -124,18 +124,37 @@ class scoreboard:
 				if dice[k] == i:
 					return j=j+1
 				if j=4:
-					points = int(dice[0] + dice[1] + dice[2] + dice[3] + dice[4] + dice[5])
+					points = int(dice[0] + dice[1] + dice[2] + dice[3] + dice[4])
 
 		self.four_of_a_kind = points
 
-	def full_house(): #check
+	def full_house():
 		points = 0
-		points = points + 25
+		for i in range(1,6):
+			for k in range(0,4):
+				j=0
+				if dice[k] == i:
+					return j=j+1
+					return dice[k] = 0
+				if j=3:
+					for m in range(1,6):
+					for l in range (0,4):
+						n=0
+						if dice[l] == m:
+							return n=n+1
+							if n = 2:
+								points = points + 25
+
 
 		self.full_house = points
 
+		
+		
 	def small_straight(): #check
 		points = 0
+		
+		
+		
 		points = points + 30
 
 		self.small_straight = points
