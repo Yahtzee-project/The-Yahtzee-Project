@@ -10,7 +10,10 @@ https://wiki.python.org/moin/HowTo/Sorting
 http://www.diveintopython.net/file_handling/for_loops.html
 (Andy Si and Mitchell Jones helped minimally helped Rohin one night with some things in the Scorecard Class)
 
-On m
+On my honor, I have niether given nor recieved unauthorized aid on this assignment. 
+
+
+pic = (https://cardgames.io/yahtzee/images/yahtzee-logo.png)
 
 
 
