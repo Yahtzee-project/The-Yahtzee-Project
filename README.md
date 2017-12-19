@@ -13,7 +13,7 @@ http://www.diveintopython.net/file_handling/for_loops.html
 On my honor, I have niether given nor recieved unauthorized aid on this assignment. 
 
 
-pic = (https://cardgames.io/yahtzee/images/yahtzee-logo.png)
+!(https://cardgames.io/yahtzee/images/yahtzee-logo.png)
 
 
 
