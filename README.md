@@ -1,4 +1,4 @@
-## The-Yahtzee-Project
+# The-Yahtzee-Project
 
 In this repository, there is a Yahtzee Game!
 
@@ -22,7 +22,7 @@ On my honor, I have niether given nor recieved unauthorized aid on this assignme
 
 
 
-# Original Planning Outline/Structure:
+### Original Planning Outline/Structure:
 
 Class Scorecard
 
