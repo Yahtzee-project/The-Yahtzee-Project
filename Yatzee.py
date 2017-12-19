@@ -14,6 +14,24 @@ class scoreboard:
     self.YAHTZEE = -1
     self.CHANCE = -1
 
+
+
+diceList = [dice[0],dice[1],dice[2],dice[3],dice[4],dice[5]]
+
+def count(x):
+		output = 0
+		for d in diceList:
+			if (d == x):
+				output = output+1
+		return output
+#print(count(3))
+
+
+
+
+
+
+
     def aces(self, dice):
     	points = 0
     	if dice[0] == 1:
@@ -161,11 +179,21 @@ class scoreboard:
 
 	def large_straight(): #check
 		points = 0
+		for m in range(1,6):
+			for l in range (0,4):
+				n=0
+				if dice[l] == m:
+					return n=n+1
+					if n = 2:
+						points = 0
+		
+		
+		
 		points = points + 40
 
 		self.large_straight = points
 
-	def YAHTZEE(): #check
+	def YAHTZEE():
 		points = 0
 		if dice[0] == dice[1] and dice[1] == dice[2] and dice[2] == dice[3] and dice[3] == dice[4]:
 			points = points + 50
@@ -177,3 +205,15 @@ class scoreboard:
 		points = int(dice[0] + dice[1] + dice[2] + dice[3] + dice[4])
 
 		self.CHANCE = points
+	
+	
+	
+	def count(x):
+		output = 0
+		for d in dice:
+			if (d == x):
+				output = output+1
+		return output
+		
+		
+		
