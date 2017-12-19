@@ -114,7 +114,7 @@ class Scoreboard:
     def full_house(self, dice):
         points=0
         if (dice[0]==dice[1] and dice[2]==dice[3] and dice[3]==dice[4]) or (dice[0]==dice[2] and dice[1]==dice[3] and dice[3]==dice[4]) or (dice[0]==dice[3] and dice[2]==dice[1] and dice[1]==dice[4]) or (dice[0]==dice[4] and dice[2]==dice[3] and dice[3]==dice[1]) or (dice[1]==dice[2] and dice[0]==dice[3] and dice[3]==dice[4]) or (dice[3]==dice[1] and dice[2]==dice[0] and dice[0]==dice[4]) or (dice[4]==dice[1] and dice[2]==dice[3] and dice[3]==dice[0]) or (dice[2]==dice[3] and dice[1]==dice[0] and dice[0]==dice[4]) or (dice[2]==dice[4] and dice[1]==dice[3] and dice[3]==dice[0]) or (dice[3]==dice[4] and dice[2]==dice[0] and dice[0]==dice[1]): # a silly ad hoc fix, every possible full house
-            points==25
+            points=25
         self.full_houseV=points
     def small_straight(self, dice):
         points = 0
